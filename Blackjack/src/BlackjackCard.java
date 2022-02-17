@@ -18,5 +18,5 @@ public class BlackjackCard extends Card{
 
     public boolean isAce() {
         return rankNumber == 1;
-    }
+    };
 }
