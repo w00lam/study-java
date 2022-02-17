@@ -10,6 +10,7 @@ public class SavingsAccount extends BankAccount{
     }
 
     public void addInterest() {
+        // balance = (int) (balance * (1 + interest));
         setBalance((int) (getBalance() * (1 + interest)));
     }
 }
