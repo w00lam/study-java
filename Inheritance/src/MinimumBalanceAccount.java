@@ -12,7 +12,7 @@ public class MinimumBalanceAccount extends BankAccount{
     @Override
     public boolean withdraw(int amount) {
         if(getBalance() - amount >= minimum) {
-            System.out.println("적어 " + minimum + "원은 남겨야 합니다.");
+            System.out.println("적어도 " + minimum + "원은 남겨야 합니다.");
             return false;
         }
 
