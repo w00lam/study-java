@@ -10,5 +10,5 @@ public class Main {
         System.out.println(card2.isAce());
         System.out.println(card3.getValue());
         System.out.println(card3.isAce());
-    };
+    }
 }
