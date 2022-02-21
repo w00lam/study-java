@@ -1,15 +1,22 @@
-public class BlackjackHand extends Deck{
+public class BlackjackHand extends Deck<BlackjackCard> {
     public int getValue() {
-        int sum = 0;
+        int value = 0;
+        int aceCount = 0;
 
-        for (Card card : getCards()) {
-            sum += ((BlackjackCard) card).getValue();
-            if (sum > 21 && ((BlackjackCard) card).isAce()) {
-                sum -= 10;
+        for (BlackjackCard card : getCards()) {
+            if (card.isAce()) {
+                aceCount++;
             }
+
+            value += card.getValue();
         }
 
-        return sum;
+        while (aceCount > 0 && value > 21) {
+            value -= 10;
+            aceCount--;
+        }
+
+        return value;
     }
 
     public boolean isBusted() {
@@ -17,6 +24,6 @@ public class BlackjackHand extends Deck{
     }
 
     public boolean isBlackjack() {
-        return getCards().size() == 2 && getValue() == 21;
+        return getValue() == 21 && getCards().size() == 2;
     }
 }
